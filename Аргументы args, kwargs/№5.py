@@ -1,12 +1,14 @@
 def custom_print(*args, **kwargs):
-    sep_0 = ' '
-    end_0 = '\n'
+    sep0 = " "
+    end0 = "\n"
     true_list = []
-    for x in kwargs:
-        if x == 'end':
-            end_0 = kwargs[x]
-        elif x == 'sep':
-            sep_0 = kwargs[x]
+    
+    for key, value in kwargs.items():
+        if key == "end":
+            end0 = value
+        elif key == "sep":
+            sep0 = value
         else:
-            true_list.append(f'{x}={kwargs[x]}')
-    print(*args, *true_list, sep=sep_0, end=end_0)
+            true_list.append(f"{key}={value}")
+            
+    print(*args, *true_list, sep=sep0, end=end0)
